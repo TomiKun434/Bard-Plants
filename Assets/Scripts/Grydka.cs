@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
@@ -26,7 +27,7 @@ public class Grydka : MonoBehaviour
     public void InitGrydka()
     {
     }
-    
+
     void Update()
     {
         if (Growth)
@@ -37,12 +38,13 @@ public class Grydka : MonoBehaviour
                 //TODO евент что созрели
                 return;
             }
+
             if (timeGrowthInStage + plant.timeGrowth < Time.time)
             {
                 StateOfGrowth++;
                 timeGrowthInStage = Time.time;
                 plantunGrydka.texture = plant.spritePlant[StateOfGrowth];
-            } 
+            }
         }
     }
 
@@ -55,6 +57,27 @@ public class Grydka : MonoBehaviour
         plant = _allPlants[Random.Range(0, _allPlants.Count)];
         plantunGrydka.texture = plant.spritePlant[0];
         plantunGrydka.gameObject.SetActive(true);
+    }
+
+    private void OnMouseDown()
+    {
+        if (StateOfGrowth == 3)
+        {
+            StateOfGrowth = 0;
+            plantunGrydka.transform.SetParent(Bag.instance.transform);
+            plantunGrydka.transform.DOMove(Bag.instance.transform.position, 1).SetEase(Ease.Linear).OnComplete(Test);
+        }
+
+        Debug.Log($"Tap in {gameObject}");
+    }
+
+    private void Test()
+    {
+        empty = false;
+        plantunGrydka.gameObject.SetActive(false);
+        plantunGrydka.transform.SetParent(transform);
+        plantunGrydka.transform.localPosition = Vector3.zero;
+        Bag.instance.AddPlants(plant.typePlant);
     }
 }
 
