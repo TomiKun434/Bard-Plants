@@ -25,19 +25,19 @@ public class BagOpen : MonoBehaviour
     private void InitBag()
     {
         int countSlot = 0;
-        if (_bag.starchNut > 0)
+        if (Reference.GameModel.StarchNut.Value > 0)
         {
             habar[countSlot].gameObject.SetActive(true);
             habar[countSlot].GetComponent<RawImage>().texture = texturesPlants[0];
-            habar[countSlot].GetComponentInChildren<TextMeshProUGUI>().text = _bag.starchNut.ToString();
+            habar[countSlot].GetComponentInChildren<TextMeshProUGUI>().text = Reference.GameModel.StarchNut.Value.ToString();
             countSlot++;
         }
         
-        if (_bag.mysticalMushroom > 0)
+        if (Reference.GameModel.MysticalMushroom.Value > 0)
         {
             habar[countSlot].gameObject.SetActive(true);
             habar[countSlot].GetComponent<RawImage>().texture = texturesPlants[1];
-            habar[countSlot].GetComponentInChildren<TextMeshProUGUI>().text = _bag.mysticalMushroom.ToString();
+            habar[countSlot].GetComponentInChildren<TextMeshProUGUI>().text = Reference.GameModel.MysticalMushroom.Value.ToString();
             countSlot++;
         }
     }

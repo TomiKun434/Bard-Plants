@@ -6,7 +6,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance; 
     public List<Grydka> allGrydka;
-    
+    public List<Texture> sptiTexturesPlant;
+    public List<Customer> customers;
+
     void Start()
     {
         if (instance == null) { 
@@ -16,11 +18,14 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
         DontDestroyOnLoad(gameObject);
-        
+        CustomersSpawn();
         // InitializeManager();
     }
 
- 
+    private void CustomersSpawn()
+    {
+        customers[0].gameObject.SetActive(true);
+    }
     void Update()
     {
         
