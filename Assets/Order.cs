@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,18 +12,17 @@ public class Order : MonoBehaviour
     public int needplant;
     public int collected;
     public bool completed;
-    
+
     void Start()
     {
-        
     }
 
-    
+
     void Update()
     {
         if (collected >= needplant)
         {
-            Debug.Log($"Completed");
+            // Debug.Log($"Completed");
             completed = true;
             completeOrderFon.SetActive(true);
             completeOrderTagl.SetActive(true);
@@ -34,6 +30,8 @@ public class Order : MonoBehaviour
         else
         {
             completed = false;
+            completeOrderFon.SetActive(false);
+            completeOrderTagl.SetActive(false);
         }
     }
 
@@ -43,32 +41,33 @@ public class Order : MonoBehaviour
         this.typePlant = typePlant;
         switch (typePlant)
         {
-            case ETypePlant.Starch_Nut :
+            case ETypePlant.Starch_Nut:
                 plant.texture = GameManager.instance.sptiTexturesPlant[0];
                 break;
-                
-            case ETypePlant.Mystical_Mushroom :
+
+            case ETypePlant.Mystical_Mushroom:
                 plant.texture = GameManager.instance.sptiTexturesPlant[1];
                 break;
         }
+
         completeOrderFon.SetActive(false);
         completeOrderTagl.SetActive(false);
         // Reference.GameModel.StarchNut.Subscribe(ShowText);
         CountText();
     }
-    
-    
+
+
     public void CountText()
     {
         switch (typePlant)
         {
-            case ETypePlant.Starch_Nut :
+            case ETypePlant.Starch_Nut:
                 // count = Bag.instance.starchNut;
                 Reference.GameModel.StarchNut.Subscribe(ShowText);
                 ShowText(Reference.GameModel.StarchNut.Value);
                 break;
-                
-            case ETypePlant.Mystical_Mushroom :
+
+            case ETypePlant.Mystical_Mushroom:
                 // count = Bag.instance.mysticalMushroom;
                 Reference.GameModel.MysticalMushroom.Subscribe(ShowText);
                 ShowText(Reference.GameModel.MysticalMushroom.Value);

@@ -1,11 +1,12 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Customer : MonoBehaviour
 {
     public Orders orders;
-    public int expa;
+  public int reward;
 
-    void Start()
+  public void Awake()
     {
         orders = GetComponentInChildren<Orders>();
         orders.gameObject.SetActive(true);
@@ -13,10 +14,25 @@ public class Customer : MonoBehaviour
 
     private void OnMouseDown()
     {
+        Debug.Log($"OnMouseDown");
         if (orders.DeliveryOrder())
         {
-            Debug.Log($"Add Expa {expa}");
+            Debug.Log($"Add Expa {reward}");
+            foreach (var ord in orders.ordersActive)
+            {
+                switch (ord.typePlant)
+                {
+                    case ETypePlant.Starch_Nut:
+                        Reference.GameModel.StarchNut.Value -= ord.needplant;
+                        break;
+
+                    case ETypePlant.Mystical_Mushroom:
+                        Reference.GameModel.MysticalMushroom.Value -= ord.needplant;
+                        break;
+                }
+            }
             gameObject.SetActive(false);
+            Reference.GameModel.CountCustomerInGame.Value--;
         }
     }
 }

@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance; 
     public List<Grydka> allGrydka;
     public List<Texture> sptiTexturesPlant;
-    public List<Customer> customers;
+    // public List<Customer> customers;
 
     void Start()
     {
@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
 
     private void CustomersSpawn()
     {
-        customers[0].gameObject.SetActive(true);
+        // customers[0].gameObject.SetActive(true);
     }
     void Update()
     {
