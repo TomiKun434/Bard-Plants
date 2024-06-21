@@ -17,16 +17,8 @@ public class Grydka : MonoBehaviour
     private bool Growth;
     private float timeGrowthInStage;
     public bool empty;
-
-
-    private void Start()
-    {
-        // PlantaPlant();
-    }
-
-    public void InitGrydka()
-    {
-    }
+    public int levelGrydka;
+    
 
     void Update()
     {
@@ -78,6 +70,12 @@ public class Grydka : MonoBehaviour
         plantunGrydka.transform.SetParent(transform);
         plantunGrydka.transform.localPosition = Vector3.zero;
         Bag.instance.AddPlants(plant.typePlant);
+    }
+
+    public void UpgradeGrydka()
+    {
+        GameManager.instance.PoPUpUpgrade.SetActive(true);
+        Debug.Log($"UptgadeGrydka");
     }
 }
 

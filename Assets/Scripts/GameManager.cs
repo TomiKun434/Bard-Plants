@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
     public static GameManager instance; 
     public List<Grydka> allGrydka;
     public List<Texture> sptiTexturesPlant;
+
+    public GameObject PoPUpUpgrade;
     // public List<Customer> customers;
 
     void Start()
