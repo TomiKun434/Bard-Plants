@@ -2060,15 +2060,6 @@ MonoBehaviour:
     thirdPlant: 0
     thirdCount: 0
     reward: 200
-  - typeCustomer: 3
-    countOrders: 3
-    firstPlant: 2
-    firstCount: 15
-    secondPlant: 1
-    secondCount: 20
-    thirdPlant: 3
-    thirdCount: 10
-    reward: 500
   - typeCustomer: 1
     countOrders: 3
     firstPlant: 2
