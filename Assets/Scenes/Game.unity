@@ -766,7 +766,7 @@ MonoBehaviour:
     - {fileID: 2800000, guid: a04559b3cb3133b4fb79bad1a5bd4a13, type: 3}
     - {fileID: 2800000, guid: 22241081059ea544a8687c0e502c16b2, type: 3}
   - namePlant: MysticalMushroom
-    typePlant: 2
+    typePlant: 3
     timeGrowth: 6
     spritePlant:
     - {fileID: 2800000, guid: 550be85f4799df5439e115dcaf94301b, type: 3}
@@ -774,6 +774,15 @@ MonoBehaviour:
     - {fileID: 2800000, guid: 4b3d860d035c07145802a5f3a7e49d00, type: 3}
     - {fileID: 2800000, guid: 7de36a8edce09ff4c91652aa71fc58b1, type: 3}
     - {fileID: 2800000, guid: 0fa3367a655e81b4aaad02a497769a04, type: 3}
+  - namePlant: CrystalNut
+    typePlant: 3
+    timeGrowth: 10
+    spritePlant:
+    - {fileID: 2800000, guid: 992d958d452e980439b94fa5250c4b00, type: 3}
+    - {fileID: 2800000, guid: 7f63af8086fb45748a008dcdb2697bef, type: 3}
+    - {fileID: 2800000, guid: 3a8e831273e02944eac46a63a1ce1a3e, type: 3}
+    - {fileID: 2800000, guid: 7c081db15baecbb428a280ae0818bfe0, type: 3}
+    - {fileID: 2800000, guid: 6c159db74031f784fb64d522b01d61cd, type: 3}
   plantunGrydka: {fileID: 1534838324}
   plant:
     namePlant: 
@@ -1176,6 +1185,15 @@ MonoBehaviour:
     - {fileID: 2800000, guid: 4b3d860d035c07145802a5f3a7e49d00, type: 3}
     - {fileID: 2800000, guid: 7de36a8edce09ff4c91652aa71fc58b1, type: 3}
     - {fileID: 2800000, guid: 0fa3367a655e81b4aaad02a497769a04, type: 3}
+  - namePlant: CrystalNut
+    typePlant: 3
+    timeGrowth: 10
+    spritePlant:
+    - {fileID: 2800000, guid: 992d958d452e980439b94fa5250c4b00, type: 3}
+    - {fileID: 2800000, guid: 7f63af8086fb45748a008dcdb2697bef, type: 3}
+    - {fileID: 2800000, guid: 3a8e831273e02944eac46a63a1ce1a3e, type: 3}
+    - {fileID: 2800000, guid: 7c081db15baecbb428a280ae0818bfe0, type: 3}
+    - {fileID: 2800000, guid: 6c159db74031f784fb64d522b01d61cd, type: 3}
   plantunGrydka: {fileID: 2089849592}
   plant:
     namePlant: 
@@ -1615,9 +1633,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 193057375}
-  - component: {fileID: 193057374}
   - component: {fileID: 193057373}
   - component: {fileID: 193057376}
+  - component: {fileID: 193057377}
   m_Layer: 10
   m_Name: Player
   m_TagString: Untagged
@@ -1652,51 +1670,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &193057374
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 193057372}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.00089182705, y: -0.33768734}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.93, y: 4.22}
-    newSize: {x: 1.93, y: 4.22}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.3996603, y: 0.29881483}
-  m_EdgeRadius: 0
 --- !u!4 &193057375
 Transform:
   m_ObjectHideFlags: 0
@@ -1733,6 +1706,41 @@ MonoBehaviour:
   _dynamicJoystick: {fileID: 2020803304}
   _moveSpeed: 2
   _rb: {fileID: 193057373}
+--- !u!70 &193057377
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 193057372}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.00871614, y: -0.3946788}
+  m_Size: {x: 0.3605542, y: 0.20367}
+  m_Direction: 1
 --- !u!1 &215395973
 GameObject:
   m_ObjectHideFlags: 0
@@ -2053,14 +2061,32 @@ MonoBehaviour:
     thirdCount: 0
     reward: 200
   - typeCustomer: 3
-    countOrders: 2
+    countOrders: 3
+    firstPlant: 2
+    firstCount: 15
+    secondPlant: 1
+    secondCount: 20
+    thirdPlant: 3
+    thirdCount: 10
+    reward: 500
+  - typeCustomer: 1
+    countOrders: 3
     firstPlant: 2
     firstCount: 20
     secondPlant: 1
     secondCount: 20
-    thirdPlant: 0
-    thirdCount: 0
-    reward: 400
+    thirdPlant: 3
+    thirdCount: 20
+    reward: 800
+  - typeCustomer: 3
+    countOrders: 3
+    firstPlant: 2
+    firstCount: 40
+    secondPlant: 1
+    secondCount: 40
+    thirdPlant: 3
+    thirdCount: 40
+    reward: 1000
   allCustomerType:
   - {fileID: 9168784007612792306, guid: 6b2aadd5183eb5746a1d96bca1658d31, type: 3}
   - {fileID: 8603396861641865984, guid: cceecbe7d8227bb488b60a15bf1c8b76, type: 3}
@@ -3878,6 +3904,15 @@ MonoBehaviour:
     - {fileID: 2800000, guid: 4b3d860d035c07145802a5f3a7e49d00, type: 3}
     - {fileID: 2800000, guid: 7de36a8edce09ff4c91652aa71fc58b1, type: 3}
     - {fileID: 2800000, guid: 0fa3367a655e81b4aaad02a497769a04, type: 3}
+  - namePlant: CrystalNut
+    typePlant: 3
+    timeGrowth: 10
+    spritePlant:
+    - {fileID: 2800000, guid: 992d958d452e980439b94fa5250c4b00, type: 3}
+    - {fileID: 2800000, guid: 7f63af8086fb45748a008dcdb2697bef, type: 3}
+    - {fileID: 2800000, guid: 3a8e831273e02944eac46a63a1ce1a3e, type: 3}
+    - {fileID: 2800000, guid: 7c081db15baecbb428a280ae0818bfe0, type: 3}
+    - {fileID: 2800000, guid: 6c159db74031f784fb64d522b01d61cd, type: 3}
   plantunGrydka: {fileID: 222399642}
   plant:
     namePlant: 
@@ -4481,6 +4516,15 @@ MonoBehaviour:
     - {fileID: 2800000, guid: 4b3d860d035c07145802a5f3a7e49d00, type: 3}
     - {fileID: 2800000, guid: 7de36a8edce09ff4c91652aa71fc58b1, type: 3}
     - {fileID: 2800000, guid: 0fa3367a655e81b4aaad02a497769a04, type: 3}
+  - namePlant: CrystalNut
+    typePlant: 3
+    timeGrowth: 10
+    spritePlant:
+    - {fileID: 2800000, guid: 992d958d452e980439b94fa5250c4b00, type: 3}
+    - {fileID: 2800000, guid: 7f63af8086fb45748a008dcdb2697bef, type: 3}
+    - {fileID: 2800000, guid: 3a8e831273e02944eac46a63a1ce1a3e, type: 3}
+    - {fileID: 2800000, guid: 7c081db15baecbb428a280ae0818bfe0, type: 3}
+    - {fileID: 2800000, guid: 6c159db74031f784fb64d522b01d61cd, type: 3}
   plantunGrydka: {fileID: 2089276083}
   plant:
     namePlant: 
@@ -5810,6 +5854,7 @@ MonoBehaviour:
   sptiTexturesPlant:
   - {fileID: 2800000, guid: 22241081059ea544a8687c0e502c16b2, type: 3}
   - {fileID: 2800000, guid: 0fa3367a655e81b4aaad02a497769a04, type: 3}
+  - {fileID: 2800000, guid: 6c159db74031f784fb64d522b01d61cd, type: 3}
   PoPUpUpgrade: {fileID: 631340496}
 --- !u!4 &1013550068
 Transform:
@@ -5985,6 +6030,15 @@ MonoBehaviour:
     - {fileID: 2800000, guid: 4b3d860d035c07145802a5f3a7e49d00, type: 3}
     - {fileID: 2800000, guid: 7de36a8edce09ff4c91652aa71fc58b1, type: 3}
     - {fileID: 2800000, guid: 0fa3367a655e81b4aaad02a497769a04, type: 3}
+  - namePlant: CrystalNut
+    typePlant: 3
+    timeGrowth: 10
+    spritePlant:
+    - {fileID: 2800000, guid: 992d958d452e980439b94fa5250c4b00, type: 3}
+    - {fileID: 2800000, guid: 7f63af8086fb45748a008dcdb2697bef, type: 3}
+    - {fileID: 2800000, guid: 3a8e831273e02944eac46a63a1ce1a3e, type: 3}
+    - {fileID: 2800000, guid: 7c081db15baecbb428a280ae0818bfe0, type: 3}
+    - {fileID: 2800000, guid: 6c159db74031f784fb64d522b01d61cd, type: 3}
   plantunGrydka: {fileID: 1557563806}
   plant:
     namePlant: 
@@ -6153,6 +6207,15 @@ MonoBehaviour:
     - {fileID: 2800000, guid: 4b3d860d035c07145802a5f3a7e49d00, type: 3}
     - {fileID: 2800000, guid: 7de36a8edce09ff4c91652aa71fc58b1, type: 3}
     - {fileID: 2800000, guid: 0fa3367a655e81b4aaad02a497769a04, type: 3}
+  - namePlant: CrystalNut
+    typePlant: 3
+    timeGrowth: 10
+    spritePlant:
+    - {fileID: 2800000, guid: 992d958d452e980439b94fa5250c4b00, type: 3}
+    - {fileID: 2800000, guid: 7f63af8086fb45748a008dcdb2697bef, type: 3}
+    - {fileID: 2800000, guid: 3a8e831273e02944eac46a63a1ce1a3e, type: 3}
+    - {fileID: 2800000, guid: 7c081db15baecbb428a280ae0818bfe0, type: 3}
+    - {fileID: 2800000, guid: 6c159db74031f784fb64d522b01d61cd, type: 3}
   plantunGrydka: {fileID: 1504065616}
   plant:
     namePlant: 
@@ -6455,6 +6518,15 @@ MonoBehaviour:
     - {fileID: 2800000, guid: 4b3d860d035c07145802a5f3a7e49d00, type: 3}
     - {fileID: 2800000, guid: 7de36a8edce09ff4c91652aa71fc58b1, type: 3}
     - {fileID: 2800000, guid: 0fa3367a655e81b4aaad02a497769a04, type: 3}
+  - namePlant: CrystalNut
+    typePlant: 3
+    timeGrowth: 10
+    spritePlant:
+    - {fileID: 2800000, guid: 992d958d452e980439b94fa5250c4b00, type: 3}
+    - {fileID: 2800000, guid: 7f63af8086fb45748a008dcdb2697bef, type: 3}
+    - {fileID: 2800000, guid: 3a8e831273e02944eac46a63a1ce1a3e, type: 3}
+    - {fileID: 2800000, guid: 7c081db15baecbb428a280ae0818bfe0, type: 3}
+    - {fileID: 2800000, guid: 6c159db74031f784fb64d522b01d61cd, type: 3}
   plantunGrydka: {fileID: 215395975}
   plant:
     namePlant: 
@@ -6755,6 +6827,15 @@ MonoBehaviour:
     - {fileID: 2800000, guid: 4b3d860d035c07145802a5f3a7e49d00, type: 3}
     - {fileID: 2800000, guid: 7de36a8edce09ff4c91652aa71fc58b1, type: 3}
     - {fileID: 2800000, guid: 0fa3367a655e81b4aaad02a497769a04, type: 3}
+  - namePlant: CrystalNut
+    typePlant: 3
+    timeGrowth: 10
+    spritePlant:
+    - {fileID: 2800000, guid: 992d958d452e980439b94fa5250c4b00, type: 3}
+    - {fileID: 2800000, guid: 7f63af8086fb45748a008dcdb2697bef, type: 3}
+    - {fileID: 2800000, guid: 3a8e831273e02944eac46a63a1ce1a3e, type: 3}
+    - {fileID: 2800000, guid: 7c081db15baecbb428a280ae0818bfe0, type: 3}
+    - {fileID: 2800000, guid: 6c159db74031f784fb64d522b01d61cd, type: 3}
   plantunGrydka: {fileID: 886750722}
   plant:
     namePlant: 
@@ -6923,6 +7004,15 @@ MonoBehaviour:
     - {fileID: 2800000, guid: 4b3d860d035c07145802a5f3a7e49d00, type: 3}
     - {fileID: 2800000, guid: 7de36a8edce09ff4c91652aa71fc58b1, type: 3}
     - {fileID: 2800000, guid: 0fa3367a655e81b4aaad02a497769a04, type: 3}
+  - namePlant: CrystalNut
+    typePlant: 3
+    timeGrowth: 10
+    spritePlant:
+    - {fileID: 2800000, guid: 992d958d452e980439b94fa5250c4b00, type: 3}
+    - {fileID: 2800000, guid: 7f63af8086fb45748a008dcdb2697bef, type: 3}
+    - {fileID: 2800000, guid: 3a8e831273e02944eac46a63a1ce1a3e, type: 3}
+    - {fileID: 2800000, guid: 7c081db15baecbb428a280ae0818bfe0, type: 3}
+    - {fileID: 2800000, guid: 6c159db74031f784fb64d522b01d61cd, type: 3}
   plantunGrydka: {fileID: 905097884}
   plant:
     namePlant: 
@@ -7192,6 +7282,15 @@ MonoBehaviour:
     - {fileID: 2800000, guid: 4b3d860d035c07145802a5f3a7e49d00, type: 3}
     - {fileID: 2800000, guid: 7de36a8edce09ff4c91652aa71fc58b1, type: 3}
     - {fileID: 2800000, guid: 0fa3367a655e81b4aaad02a497769a04, type: 3}
+  - namePlant: CrystalNut
+    typePlant: 3
+    timeGrowth: 10
+    spritePlant:
+    - {fileID: 2800000, guid: 992d958d452e980439b94fa5250c4b00, type: 3}
+    - {fileID: 2800000, guid: 7f63af8086fb45748a008dcdb2697bef, type: 3}
+    - {fileID: 2800000, guid: 3a8e831273e02944eac46a63a1ce1a3e, type: 3}
+    - {fileID: 2800000, guid: 7c081db15baecbb428a280ae0818bfe0, type: 3}
+    - {fileID: 2800000, guid: 6c159db74031f784fb64d522b01d61cd, type: 3}
   plantunGrydka: {fileID: 499930552}
   plant:
     namePlant: 
@@ -7436,6 +7535,15 @@ MonoBehaviour:
     - {fileID: 2800000, guid: 4b3d860d035c07145802a5f3a7e49d00, type: 3}
     - {fileID: 2800000, guid: 7de36a8edce09ff4c91652aa71fc58b1, type: 3}
     - {fileID: 2800000, guid: 0fa3367a655e81b4aaad02a497769a04, type: 3}
+  - namePlant: CrystalNut
+    typePlant: 3
+    timeGrowth: 10
+    spritePlant:
+    - {fileID: 2800000, guid: 992d958d452e980439b94fa5250c4b00, type: 3}
+    - {fileID: 2800000, guid: 7f63af8086fb45748a008dcdb2697bef, type: 3}
+    - {fileID: 2800000, guid: 3a8e831273e02944eac46a63a1ce1a3e, type: 3}
+    - {fileID: 2800000, guid: 7c081db15baecbb428a280ae0818bfe0, type: 3}
+    - {fileID: 2800000, guid: 6c159db74031f784fb64d522b01d61cd, type: 3}
   plantunGrydka: {fileID: 2099487991}
   plant:
     namePlant: 
@@ -9533,6 +9641,7 @@ MonoBehaviour:
   texturesPlants:
   - {fileID: 2800000, guid: 22241081059ea544a8687c0e502c16b2, type: 3}
   - {fileID: 2800000, guid: 0fa3367a655e81b4aaad02a497769a04, type: 3}
+  - {fileID: 2800000, guid: 6c159db74031f784fb64d522b01d61cd, type: 3}
 --- !u!1 &1741161393
 GameObject:
   m_ObjectHideFlags: 0
@@ -10035,6 +10144,15 @@ MonoBehaviour:
     - {fileID: 2800000, guid: 4b3d860d035c07145802a5f3a7e49d00, type: 3}
     - {fileID: 2800000, guid: 7de36a8edce09ff4c91652aa71fc58b1, type: 3}
     - {fileID: 2800000, guid: 0fa3367a655e81b4aaad02a497769a04, type: 3}
+  - namePlant: CrystalNut
+    typePlant: 3
+    timeGrowth: 10
+    spritePlant:
+    - {fileID: 2800000, guid: 992d958d452e980439b94fa5250c4b00, type: 3}
+    - {fileID: 2800000, guid: 7f63af8086fb45748a008dcdb2697bef, type: 3}
+    - {fileID: 2800000, guid: 3a8e831273e02944eac46a63a1ce1a3e, type: 3}
+    - {fileID: 2800000, guid: 7c081db15baecbb428a280ae0818bfe0, type: 3}
+    - {fileID: 2800000, guid: 6c159db74031f784fb64d522b01d61cd, type: 3}
   plantunGrydka: {fileID: 1967044838}
   plant:
     namePlant: 

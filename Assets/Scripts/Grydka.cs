@@ -82,7 +82,8 @@ public class Grydka : MonoBehaviour
 public enum ETypePlant
 {
     Starch_Nut = 1,
-    Mystical_Mushroom = 2
+    Mystical_Mushroom = 2,
+    CrystalNut = 3
 }
 
 [Serializable]

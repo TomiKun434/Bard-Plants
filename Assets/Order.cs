@@ -48,6 +48,10 @@ public class Order : MonoBehaviour
             case ETypePlant.Mystical_Mushroom:
                 plant.texture = GameManager.instance.sptiTexturesPlant[1];
                 break;
+            
+            case ETypePlant.CrystalNut:
+                plant.texture = GameManager.instance.sptiTexturesPlant[2];
+                break;
         }
 
         completeOrderFon.SetActive(false);
@@ -72,6 +76,12 @@ public class Order : MonoBehaviour
                 Reference.GameModel.MysticalMushroom.Subscribe(ShowText);
                 ShowText(Reference.GameModel.MysticalMushroom.Value);
                 break;
+            
+            case ETypePlant.CrystalNut:
+                // count = Bag.instance.mysticalMushroom;
+                Reference.GameModel.CrystalNut.Subscribe(ShowText);
+                ShowText(Reference.GameModel.CrystalNut.Value);
+                break;
         }
     }
 
@@ -85,5 +95,6 @@ public class Order : MonoBehaviour
     {
         Reference.GameModel.StarchNut.UnSubscribe(ShowText);
         Reference.GameModel.MysticalMushroom.UnSubscribe(ShowText);
+        Reference.GameModel.CrystalNut.UnSubscribe(ShowText);
     }
 }

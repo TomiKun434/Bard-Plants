@@ -29,6 +29,10 @@ public class Customer : MonoBehaviour
                     case ETypePlant.Mystical_Mushroom:
                         Reference.GameModel.MysticalMushroom.Value -= ord.needplant;
                         break;
+                    
+                    case ETypePlant.CrystalNut:
+                        Reference.GameModel.CrystalNut.Value -= ord.needplant;
+                        break;
                 }
             }
             gameObject.SetActive(false);

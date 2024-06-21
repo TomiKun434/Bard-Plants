@@ -1,8 +1,5 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,10 +8,10 @@ public class BagOpen : MonoBehaviour
     public List<GameObject> habar;
     public List<Texture> texturesPlants;
     private Bag _bag;
-   
+
     private void OnEnable()
     {
-       InitBag();
+        InitBag();
     }
 
     void Awake()
@@ -29,15 +26,26 @@ public class BagOpen : MonoBehaviour
         {
             habar[countSlot].gameObject.SetActive(true);
             habar[countSlot].GetComponent<RawImage>().texture = texturesPlants[0];
-            habar[countSlot].GetComponentInChildren<TextMeshProUGUI>().text = Reference.GameModel.StarchNut.Value.ToString();
+            habar[countSlot].GetComponentInChildren<TextMeshProUGUI>().text =
+                Reference.GameModel.StarchNut.Value.ToString();
             countSlot++;
         }
-        
+
         if (Reference.GameModel.MysticalMushroom.Value > 0)
         {
             habar[countSlot].gameObject.SetActive(true);
             habar[countSlot].GetComponent<RawImage>().texture = texturesPlants[1];
-            habar[countSlot].GetComponentInChildren<TextMeshProUGUI>().text = Reference.GameModel.MysticalMushroom.Value.ToString();
+            habar[countSlot].GetComponentInChildren<TextMeshProUGUI>().text =
+                Reference.GameModel.MysticalMushroom.Value.ToString();
+            countSlot++;
+        }
+
+        if (Reference.GameModel.CrystalNut.Value > 0)
+        {
+            habar[countSlot].gameObject.SetActive(true);
+            habar[countSlot].GetComponent<RawImage>().texture = texturesPlants[2];
+            habar[countSlot].GetComponentInChildren<TextMeshProUGUI>().text =
+                Reference.GameModel.CrystalNut.Value.ToString();
             countSlot++;
         }
     }
@@ -52,6 +60,5 @@ public class BagOpen : MonoBehaviour
 
     void Update()
     {
-        
     }
 }

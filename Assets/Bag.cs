@@ -43,12 +43,15 @@ public class Bag : MonoBehaviour
         switch (type)
         {
            case ETypePlant.Starch_Nut:
-               // starchNut++;
                Reference.GameModel.StarchNut.Value++;
                break;
+           
            case ETypePlant.Mystical_Mushroom:
-               // mysticalMushroom++;
                Reference.GameModel.MysticalMushroom.Value++;
+               break;
+           
+           case ETypePlant.CrystalNut:
+               Reference.GameModel.CrystalNut.Value++;
                break;
         } 
     }
