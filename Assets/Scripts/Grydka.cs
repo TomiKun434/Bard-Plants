@@ -17,6 +17,7 @@ public class Grydka : MonoBehaviour
     private bool Growth;
     private float timeGrowthInStage;
     public bool empty;
+    public bool ripe;
     public int levelGrydka;
     
 
@@ -27,6 +28,7 @@ public class Grydka : MonoBehaviour
             if (StateOfGrowth == 3)
             {
                 Growth = false;
+                ripe = true;
                 //TODO евент что созрели
                 return;
             }
@@ -61,6 +63,19 @@ public class Grydka : MonoBehaviour
         }
 
         Debug.Log($"Tap in {gameObject}");
+    }
+
+    public void Harvesting()
+    {
+        if (StateOfGrowth == 3)
+        {
+            StateOfGrowth = 0;
+            ripe = false;
+            plantunGrydka.transform.SetParent(Bag.instance.transform);
+            plantunGrydka.transform.DOMove(Bag.instance.transform.position, 1).SetEase(Ease.Linear).OnComplete(Test);
+        }
+
+        Debug.Log($"Harvesting {gameObject}");
     }
 
     private void Test()
