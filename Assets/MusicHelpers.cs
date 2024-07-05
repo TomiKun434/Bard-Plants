@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine.AI;
 using UnityEngine;
 
-public class CollectorGnome : MonoBehaviour
+public class MusicHelpers : MonoBehaviour
 {
     public Transform _target;
     public Transform idlePoint;
@@ -50,18 +50,17 @@ public class CollectorGnome : MonoBehaviour
     IEnumerator  SowHarvesting()
     {
         yield return new WaitForSeconds(2f);
-        _target.GetComponent<Grydka>().Harvesting();
+        _target.GetComponent<Grydka>(). PlayMusic();
         WePlant = false;
         MoveToGrydka = false;
     }
 
     private Grydka TargetGardenBed()
     {
-        var allGrydka = GameManager.instance.allGrydka.FindAll(c => c.ripe);
+        var allGrydka = GameManager.instance.allGrydka.FindAll(c => c.needMusic);
         if (allGrydka.Count == 0) return null;
         var randomGrydka = Random.Range(0, allGrydka.Count);
         return allGrydka[Random.Range(0, allGrydka.Count)];
-        // return GameManager.instance.allGrydka.Find(c => c.ripe);
     }
 
     public void MoveToTarget()

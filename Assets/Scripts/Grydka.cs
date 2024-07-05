@@ -11,10 +11,14 @@ public class Grydka : MonoBehaviour
     [SerializeField] private List<Sprite> _spriteGrydka;
     [SerializeField] private List<Plant> _allPlants;
     public RawImage plantunGrydka;
+    public GameObject needPlayMusic;
+    public Sprite playMusic;
+    public Sprite noplayMusic;
     public Plant plant;
     private int StateOfGrowth;
     public float GrowthAccelerator;
     private bool Growth;
+    public bool needMusic;
     private float timeGrowthInStage;
     public bool empty;
     public bool ripe;
@@ -23,9 +27,16 @@ public class Grydka : MonoBehaviour
 
     void Update()
     {
-        if (Growth)
+        if (Growth && !needMusic)
         {
-            if (StateOfGrowth == 3)
+            if (StateOfGrowth == 2)
+            {
+                needPlayMusic.SetActive(true);
+                // needPlayMusic.texture = playMusic.texture;
+                needMusic = true;
+            }
+           
+            if (StateOfGrowth == 4)
             {
                 Growth = false;
                 ripe = true;
@@ -55,7 +66,7 @@ public class Grydka : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (StateOfGrowth == 3)
+        if (StateOfGrowth == 4)
         {
             StateOfGrowth = 0;
             plantunGrydka.transform.SetParent(Bag.instance.transform);
@@ -67,7 +78,7 @@ public class Grydka : MonoBehaviour
 
     public void Harvesting()
     {
-        if (StateOfGrowth == 3)
+        if (StateOfGrowth == 4)
         {
             StateOfGrowth = 0;
             ripe = false;
@@ -78,6 +89,14 @@ public class Grydka : MonoBehaviour
         Debug.Log($"Harvesting {gameObject}");
     }
 
+    public void PlayMusic()
+    {
+        needPlayMusic.SetActive(false);
+        // needPlayMusic.texture = noplayMusic.texture;
+        StateOfGrowth = 3;
+        timeGrowthInStage = Time.time;
+        needMusic = false;
+    }
     private void Test()
     {
         empty = false;
