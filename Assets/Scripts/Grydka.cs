@@ -23,7 +23,11 @@ public class Grydka : MonoBehaviour
     public bool empty;
     public bool ripe;
     public int levelGrydka;
-    
+
+    private void Start()
+    {
+        levelGrydka = 1;
+    }
 
     void Update()
     {
@@ -108,9 +112,22 @@ public class Grydka : MonoBehaviour
 
     public void UpgradeGrydka()
     {
+        if (levelGrydka > 3)
+        {
+            //TODO max level
+            return;
+        }
         GameManager.instance.PoPUpUpgrade.SetActive(true);
+        GameManager.instance.PoPUpUpgrade.GetComponent<UpgradePanel>().Init(levelGrydka, this);
         Debug.Log($"UptgadeGrydka");
     }
+
+    public void ApplyUpgrade()
+    {
+        levelGrydka++;
+        gameObject.GetComponent<RawImage>().texture = _spriteGrydka[levelGrydka - 1].texture;
+    }
+    
 }
 
 public enum ETypePlant
